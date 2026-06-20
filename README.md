@@ -79,7 +79,7 @@ MCU: ESP32-S3（USB-MIDIネイティブ対応）
 
 ## ライセンス
 
-MIT License
+Apache License 2.0
 
 ## 作者
 
