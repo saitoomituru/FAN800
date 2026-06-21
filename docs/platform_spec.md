@@ -43,6 +43,7 @@ OND800が発見・接続したら即座に自己申告する。これによりON
 
 ```json
 {
+  "event_schema_version": "1.0.0",
   "uuid": "FAN-MD-xxxx",
   "role": "midi_instrument",
   "display_name": "FAN800-MD ドングル",
@@ -81,6 +82,7 @@ OND800を信用しない。物理的最終防衛ラインはFAN800。
 
 ```json
 {
+  "event_schema_version": "1.0.0",
   "type": "midi_rule",
   "bpm": 120,
   "quantize": "1/4",

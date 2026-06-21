@@ -2,6 +2,10 @@
 
 **正本:** [OND800/docs/interface_spec.md](https://github.com/saitoomituru/OND800/blob/main/docs/interface_spec.md)
 
+**参照している正本版:** Season 3 v2.1
+
+**イベントスキーマ版:** `1.0.0`
+
 変更はOND800リポジトリ側が行う。このファイルはFAN800ファームウェア実装者向けの参照索引。
 
 ---
@@ -14,6 +18,7 @@ OND800がBLEで発見・接続したら**即座に**送信する。
 
 ```json
 {
+  "event_schema_version": "1.0.0",
   "uuid": "FAN-XX0-xxxx",
   "role": "slime_bazooka",
   "display_name": "スライムバズーカ左",
@@ -36,6 +41,7 @@ OND800がBLEで発見・接続したら**即座に**送信する。
 
 ```json
 {
+  "event_schema_version": "1.0.0",
   "uuid": "FAN-XX0-xxxx",
   "type": "ack",
   "event": "FIRE_SLIME_MEDIUM",
@@ -48,6 +54,7 @@ OND800がBLEで発見・接続したら**即座に**送信する。
 
 ```json
 {
+  "event_schema_version": "1.0.0",
   "uuid": "FAN-XX0-xxxx",
   "type": "ack",
   "event": "FIRE_SLIME_MEDIUM",
@@ -56,12 +63,15 @@ OND800がBLEで発見・接続したら**即座に**送信する。
 }
 ```
 
-`reason` の値: `"cooldown"` / `"temperature"` / `"overcurrent"` / `"midi_not_connected"`
+`reason` の値: `"unsupported_schema"` / `"legacy_schema_disabled"` /
+`"unknown_event"` / `"invalid_event_name"` / `"cooldown"` /
+`"temperature"` / `"overcurrent"` / `"midi_not_connected"`
 
 ### 3. MIDIルール受信（低頻度・BLE GATT）
 
 ```json
 {
+  "event_schema_version": "1.0.0",
   "type": "midi_rule",
   "bpm": 120,
   "quantize": "1/4",
